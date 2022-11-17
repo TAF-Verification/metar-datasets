@@ -4,9 +4,9 @@ POETRY_RUN=$(POETRY) run
 COVERAGE=coverage
 COVERAGE_RUN=$(COVERAGE) run -m
 
-SOURCE_FILES=$(shell find . -path "./src/*.py")
+SOURCE_FILES=$(shell find . -path "./metar_datasets/*.py")
 TEST_FILES=$(shell find . -path "./tests/**/*.py")
-SOURCES_FOLDER=src
+SOURCES_FOLDER=metar_datasets
 
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 
