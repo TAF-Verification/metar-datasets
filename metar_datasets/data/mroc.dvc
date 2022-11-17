@@ -1,0 +1,5 @@
+outs:
+- md5: 8a1123354ab2559334c112f3a633a940.dir
+  size: 11765874
+  nfiles: 17
+  path: mroc
