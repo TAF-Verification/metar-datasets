@@ -1,0 +1,44 @@
+# Type
+\sMETAR\s\SPECI\s
+
+# Wind
+\s\d{5}(G\d{2})?(\s|(K|T)?=)|\s\d{6,}KT(\s|=)|\s\d{4}KT\s|\sVBR\d{2}|\sVRB\d{3,}(K|T|KT)\s|\s([0-3]\d[1-9]|[4-9]\d0)\d{2}(G\d{2})?KT\s|\d+(G\d{2})?K\sT|\s\d{2}[1-9]\d{2}(G\d{2})?(KT)?\s|\s\d{5}(G\d{2})?(K|T)\s|\s\d{4}(G\d+)?KT|\s\d{3}(\d|\d{2}G\d)KT\s
+
+# Wind variation
+\s([0-3][0-9][1-9]|[4-9][0-9]0)V\d{3}\s|\s\d{3}V([0-3][0-9][1-9]|[4-9][0-9]0)\s|\s(\d{1,2}|\d{4,})V(\d{3})\s|\s\d{3}V(\d{1,2}|\d{4,})\s
+
+# Pressure
+\sA\d{5,}\s|\s\d{2,}/\d{2,}A\d+\s?|\sA\d{3}\s|\sA\d{1,2}\s\d{2,}\s|([AQ]\d{4}(\s|=)){2}
+
+# Time
+\s\d{5}Z?\s|\s\d{6}\s
+
+# Visibility
+\d+\s\d+\s[NWSE]([WE])?\s|\s\d{3}\s|\s\d{4}\sCAVOK\s|\s\d{4}\s[NWSE]([WE])?\s|\s(BECMG|TEMPO)\s(.+)?\d+(MTS|KMS)(\s|=)|\s9999\s(CAVOK|SKC|SCK)\s|\s\d{4}M\s
+
+# Temperatures
+\s\d{3,}/\d{2}\s|\s\d{2}/\d{3,}\s|\s\d/\d{2}\s|\s\d{2}/\d\s|\d{4}\sA
+
+# Clouds
+\s([^FSBO][ECKV][WTNC]|[FSBO][^ECKV][WTNC]|[FSBO][ECKV][^WTNC])\d{3}(TCU|CB)?\s|\s[A-Z]{3}\d{2}\s|\s[FSBO][ECKV][WTNC]\d{3}(([^TC][CB]|[TC][^CB])U?|TC|C|B|T)\s|\s[FSBO][ECKV][WTNC][A-Z]\d{3}([A-Z]+)?\s|\s[FSBO][A-Z][ECKV][WTNC]\d{3}([A-Z]+)?\s|\s[FSBO][ECKV][A-Z][WTNC]\d{3}([A-Z]+)?\s|\s[FSBO][ECKV][WTNC]\d{2}([A-Z]+)?\s|\s[A-Z]{3}\d{4,}([A-Z]{2,3})?\s|\s([FSBO][ECKV]|[FSBO][WTNC])\d{3}([A-Z]+)?\s|[FSBO][ECKV][WTNC]\s\d{3}|\sNCS\s
+
+# Weather
+VC([^RDFSTV][AZGHS]|[RDFSTV][^AZGHS])|\s(-|\+)?(DZRA|RADZ|RABR|DZBR)(\s|=)|\s/[A-Z]+\s
+
+# Weather and visibility
+\s(\+|-)?[^RMK]{2,4}\s\d{4}\s|\s?\d+(\+|-)[A-Z]+(\s|=)?
+
+# COR
+\s[A-Z0-9]{4}\sCOR\s
+
+# Windshear
+\sWS\sRWY\s
+
+# Suplementary
+RE([^RDFSTV][AZGHS]|[RDFSTV][^AZGHS])([RDFSTV][AZGHS])?
+
+# Trend
+(BECMG|TEMPO).+NOSIG
+
+# Message type
+^\d+\s([A-Z][A-Z0-9]{3}|COR)\s|\s(METAR|SPECI)\sCOR\s
