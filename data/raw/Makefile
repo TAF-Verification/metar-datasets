@@ -1,5 +1,5 @@
-YEAR=2021
-STATION=mroc
+YEAR=2023
+STATION=mrpv
 
 download:
 	# January
