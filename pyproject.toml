@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "metar-datasets"
+version = "0.1.0"
+description = "A repository to store the METAR data from aeronautical land stations."
+authors = ["diego-garro <diego.garromolina@yahoo.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "metar_datasets"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+dvc = "^2.31.0"
+get-metars = "^0.3.1"
+dagshub = "^0.2.3"
+aeromet-py = "^0.1.2"
+metar = "^1.11.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+mypy = "^0.982"
+isort = "^5.10.1"
+bump2version = "^1.0.1"
+coverage = "^6.5.0"
+codecov = "^2.1.12"
+jupyter = "^1.0.0"
+ipython = "^8.6.0"
+notebook = "^6.5.2"
+pandas = "^2.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

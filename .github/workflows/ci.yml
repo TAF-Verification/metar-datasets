@@ -1,0 +1,46 @@
+name: Push action
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+
+      - name: Setup environment
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          poetry --version
+      
+      - name: Install dependencies
+        run: |
+          poetry --version
+          poetry install
+      
+      - name: Lint
+        run: |
+          poetry --version
+          make lint
+      
+      - name: Test
+        run: |
+          poetry --version
+          make test
+      
+      - name: Generate Report
+        run: |
+          poetry --version
+          make coverage
+      
+      - name: Run CodeCov
+        run: |
+          poetry --version
+          make codecov
