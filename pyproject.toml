@@ -10,10 +10,14 @@ packages = [{include = "metar_datasets"}]
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
 dvc = "^2.31.0"
-get-metars = "^0.3.1"
+get-metars = "0.5.1"
 dagshub = "^0.2.3"
 aeromet-py = "^0.1.2"
 metar = "^1.11.0"
+metpy = "^1.6.3"
+pandas = "^2.2.3"
+typer = "0.9.4"
+rich = "^13.9.4"
 
 
 [tool.poetry.group.dev.dependencies]
