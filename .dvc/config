@@ -1,2 +1,3 @@
 ['remote "origin"']
-    url = https://dagshub.com/diego-garro/metar-datasets.dvc
+    url = s3://dvc
+    endpointurl = https://dagshub.com/diego-garro/metar-datasets.s3

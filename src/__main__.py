@@ -2,6 +2,7 @@ import os
 
 from typing import Annotated, Optional
 from datetime import datetime
+from enum import Enum
 
 import typer
 
@@ -9,7 +10,7 @@ from rich import print as rprint
 
 from .__version__ import __version__
 from .config import PROCESSED_DATA_DIR, INITIAL_DATA_YEAR
-from .data import process_several_files
+from .data import process_several_files, MetarParserType
 
 
 app = typer.Typer()
@@ -17,7 +18,7 @@ app = typer.Typer()
 
 def version_callback(version: bool) -> None:
     if version:
-        print(f"metar-datasets, version {__version__}")
+        print(f"metar-datasets v{__version__}")
         raise typer.Exit()
 
 
@@ -29,6 +30,7 @@ def main(
             "--version",
             "-v",
             callback=version_callback,
+            is_eager=True,
             help="Show module version and exit.",
         ),
     ] = None,
@@ -64,6 +66,14 @@ def create_csv_file(
             help="Breaks the reading data process if a file is not found.",
         ),
     ] = False,
+    parser: Annotated[
+        MetarParserType,
+        typer.Option(
+            "--parser",
+            "-p",
+            help="Parser to use.",
+        ),
+    ] = MetarParserType.METPY,
 ) -> None:
     station = station.lower()
 
@@ -78,6 +88,7 @@ def create_csv_file(
         initial_year=initial_year,
         final_year=final_year,
         strict=strict,
+        parser=MetarParserType(parser.value),
     )
 
     save_path = PROCESSED_DATA_DIR / f"{station}/metar/csv/"

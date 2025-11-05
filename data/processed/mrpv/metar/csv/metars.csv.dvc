@@ -1,0 +1,5 @@
+outs:
+- md5: 3d5746b79fc669849027fcbc01b45abb
+  size: 7458904
+  hash: md5
+  path: metars.csv

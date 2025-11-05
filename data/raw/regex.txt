@@ -38,6 +38,8 @@ WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 
 \s(OCV|OC\d|OVCC|OCVV|OV)\d+
 
+\s(FEW|SCT|BKN|OVC)\s
+
 \s\d{4,6}[ZX]\sNIL
 
 (A\d+|RE[A-Z]+)\s(RAF|GU|V|W[ET(T)?]|FU|MX)

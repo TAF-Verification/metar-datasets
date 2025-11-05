@@ -1,4 +1,5 @@
 outs:
-- md5: 1f27cc4470adab2ecaede0159bafc27b
-  size: 434961
+- md5: 8ac5bf7029ebec7c5f0676da2842850a
+  size: 434964
   path: 2018.txt
+  hash: md5

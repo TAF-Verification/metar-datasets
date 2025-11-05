@@ -5,32 +5,36 @@ description = "A repository to store the METAR data from aeronautical land stati
 authors = ["diego-garro <diego.garromolina@yahoo.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "metar_datasets"}]
+packages = [{include = "src"}]
+
+[tool.poetry.scripts]
+metar-datasets = 'src.__main__:app'
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
 dvc = "^3.63.0"
-get-metars = "0.5.1"
 dagshub = "^0.2.3"
 aeromet-py = "^0.1.2"
 metar = "^1.11.0"
 metpy = "^1.7.1"
 pandas = "^2.3.3"
-typer = "0.9.4"
+typer = "^0.20.0"
 rich = "^14.2.0"
+dvc-s3 = "^3.2.2"
+get-metars = "^0.6.2"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
-mypy = "^0.982"
-isort = "^5.10.1"
+black = "^25.9.0"
+mypy = "^1.18.2"
+isort = "^7.0.0"
 bump2version = "^1.0.1"
-coverage = "^6.5.0"
-codecov = "^2.1.12"
-jupyter = "^1.0.0"
+coverage = "^7.11.0"
+codecov = "^2.1.13"
+jupyter = "^1.1.1"
 ipython = "^8.6.0"
-notebook = "^6.5.2"
-pandas = "^2.2.0"
+notebook = "^7.4.7"
+pandas = "^2.3.3"
 
 [build-system]
 requires = ["poetry-core"]
