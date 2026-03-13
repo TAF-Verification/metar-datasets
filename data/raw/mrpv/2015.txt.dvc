@@ -1,4 +1,5 @@
 outs:
-- md5: e2a65f306c7a5fd8bc10c40636376eef
+- md5: cb00662e061d41fc108b82527bf320d7
   size: 487635
   path: 2015.txt
+  hash: md5

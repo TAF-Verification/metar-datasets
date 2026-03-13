@@ -1,4 +1,5 @@
 outs:
-- md5: cf276396327e7a5935e13bcd16351a4b
+- md5: 017bc153c825f5bc0f508e735957d366
   size: 487773
   path: 2020.txt
+  hash: md5

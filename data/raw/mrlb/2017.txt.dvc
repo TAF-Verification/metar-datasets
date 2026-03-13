@@ -1,4 +1,5 @@
 outs:
-- md5: 88dae7c3ece8ffbff6bea7b12cb2ef9c
+- md5: 208fb30cc4cf356bc9f2571084dc10e3
   size: 577120
   path: 2017.txt
+  hash: md5

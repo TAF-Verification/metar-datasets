@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from enum import Enum
 from io import TextIOWrapper, StringIO
-from typing import List
+from typing import List, Optional
 
 import pandas as pd
 import numpy as np
@@ -68,6 +68,12 @@ def _handle_ceiling(clouds: CloudList) -> int | float:
         return np.nan
 
 
+def _handle_float(value: Optional[float]) -> float:
+    if value is None:
+        return np.nan
+    return value
+
+
 def metar_to_dataframe_aerometpy(parser_metar_txt: ProcessedLine) -> pd.DataFrame:
     txt = parser_metar_txt.metar
     date = parser_metar_txt.date
@@ -76,7 +82,7 @@ def metar_to_dataframe_aerometpy(parser_metar_txt: ProcessedLine) -> pd.DataFram
     d = metar.as_dict()
     string = (
         f"{metar.time.time.strftime('%Y-%m-%d %H:%M')},"
-        f"{metar.wind.direction_in_degrees},"
+        f"{_handle_float(metar.wind.direction_in_degrees)},"
         f"{metar.wind.speed_in_knot},"
         f"{metar.wind.gust_in_knot},"
         f"{metar.prevailing_visibility.in_meters},"
@@ -85,7 +91,7 @@ def metar_to_dataframe_aerometpy(parser_metar_txt: ProcessedLine) -> pd.DataFram
         f"{_handle_ceiling(metar.clouds)},"
         f"{metar.temperatures.temperature_in_celsius},"
         f"{metar.temperatures.dewpoint_in_celsius},"
-        f"{metar.pressure.in_inHg}"
+        f"{_handle_float(metar.pressure.in_inHg):.2f}"
     )
 
     df = pd.read_csv(
@@ -104,7 +110,7 @@ def metar_to_dataframe_aerometpy(parser_metar_txt: ProcessedLine) -> pd.DataFram
             "is_ceiling",
             "temp_c",
             "dewpoint_c",
-            "pressure_inHg",
+            "pressure_inhg",
         ],
     )
 

@@ -1,4 +1,5 @@
 outs:
-- md5: 455348d2db6d5f8d464f467f2322eea9
+- md5: 7ead6e989f8d9c33ec796c239e943acc
   size: 487191
   path: 2008.txt
+  hash: md5
